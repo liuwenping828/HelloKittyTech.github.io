@@ -1,1 +1,22 @@
+Retrofit 
+http://square.github.io/retrofit/
+混肴配置
+-dontwarn retrofit.**
+-keep class retrofit.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions  
 
+Glide
+https://github.com/bumptech/glide
+混肴配置
+# 当项目中实现 GlideModule 接口需要添加如下配置
+-keepnames class com.mypackage.MyGlideModule
+# -keep public class * implements com.bumptech.glide.module.GlideModule
+
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
